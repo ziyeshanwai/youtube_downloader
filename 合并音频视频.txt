@@ -1,0 +1,25 @@
+﻿合并音频和视频
+ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac -strict experimental output.mp4
+
+如果视频中已经包含了音频，这个时候还可以替换视频中的音频，使用下面命令行。
+ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac -strict experimental
+-map 0:v:0 -map 1:a:0 output.mp4
+
+作者：匿名用户_bcc3
+链接：https://www.jianshu.com/p/2a824f13b2af
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+下载视频列表
+youtube-dl --yes-playlist -f '22' -k "https://www.youtube.com/playlist?list=PLBLmKCAjA25Br8cOVzUroqi_Nwipg-IdP"
+
+下载字幕
+youtube-dl --write-auto-sub --sub-lang en --skip-download url
+youtube-dl --write-auto-sub --sub-lang zh --skip-download url
+youtube-dl --write-auto-sub --sub-lang zh-Hans --convert-subs srt https://www.youtube.com/watch?v=Iy7NzjCmUf0
+
+下载视频 
+youtube-dl  URL
+
+转换字幕
+ffmpeg -i input.zh.vtt output.srt
