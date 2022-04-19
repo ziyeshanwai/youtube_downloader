@@ -23,3 +23,7 @@ youtube-dl  URL
 
 转换字幕
 ffmpeg -i input.zh.vtt output.srt
+
+
+只下载音频：
+youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=QTpxT-Wie1s
